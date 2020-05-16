@@ -4,7 +4,7 @@ from datetime import datetime
 import os
 
 stack = [
-  ['김지민',3],['박승준',5],['유정민',1],['전규현',2],['홍태희',4]]
+  ['김지민',0],['박승준',0],['유정민',0],['전규현',0],['홍태희',0]]
 ranking = [0 for i in range(len(stack))]
 game = discord.Game("!사용방법")
 bot = commands.Bot(command_prefix='!',activity=game,help_command=None)
@@ -80,7 +80,7 @@ async def 스택순위(ctx):
 
 @bot.command(name='사용방법')
 async def 사용방법(ctx):
-  await ctx.send('```!push 이름 : 1스택 적립\n!pop 이름 : 1스택 감소\n!현황 이름 : 그 사람의 스택 현황\n!스택순위 : 스택이 가장 적은 순으로 순위 보여줌.```')
+  await ctx.send('```!push 이름 : 1스택 적립\n!pop 이름 : 1스택 감소\n!현황 이름 : 그 사람의 스택 현황\n!스택순위 : 스택이 가장 적은 순으로 순위 보여줌.\n!안녕 : 봇이 인사합니다.
 
 @bot.command(name='안녕')
 async def 안녕(ctx):
@@ -90,4 +90,4 @@ async def 안녕(ctx):
 access_token = os.environ["BOT_TOKEN"]
 bot.run(access_token)
 """
-bot.run('NzEwNzAwNzgxMzU5MjAyMzg1.Xr5tDg.8LbsvO8N7AEZ5gWkigD-wmdOUWA')
+bot.run('NzEwNzAwNzgxMzU5MjAyMzg1.Xr-cjA.lP1fSL72fUzYVm_VpOIn0tC4wxY')
