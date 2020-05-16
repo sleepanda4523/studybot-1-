@@ -42,14 +42,14 @@ async def pop(ctx,name):
   while i<len(stack):
     if(n==stack[i][0]):
       you = stack[i][0]
-      if(stack[i][1]>0):
-        stack[i][1]=stack[i][1]-1
+      stack[i][1]=stack[i][1]-1
       your=str(stack[i][1])
       print(you)
       print(your)
-      await ctx.send('```'+you+'님 1스택 삭제. 축하드려요!\n현재 당신의 스택 현황:'+your+'```')
+      await ctx.send('```'+you+'님 1스택 제거. 축하드려요!\n현재 당신의 스택 현황:'+your+'```')
       break
     i=i+1
+
 
 @bot.command()
 async def 현황(ctx,name):
