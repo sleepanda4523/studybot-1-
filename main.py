@@ -37,15 +37,13 @@ async def push(ctx,name):
 @bot.command()
 async def pop(ctx,name):
   i=0
-  n=name
-  print(n)
   while i<len(stack):
-    if(n==stack[i][0]):
+    if(name==stack[i][0]):
       you = stack[i][0]
+      print(you)
       if(stack[i][1]>0):
         stack[i][1]=stack[i][1]-1
       your=str(stack[i][1])
-      print(you)
       print(your)
       await ctx.send('```'+you+'님 1스택 제거. 축하드려요!\n현재 당신의 스택 현황:'+your+'```')
       break
@@ -81,7 +79,7 @@ async def 스택순위(ctx):
 
 @bot.command(name='사용방법')
 async def 사용방법(ctx):
-  await ctx.send('```!push 이름 : 1스택 적립\n!pop 이름 : 1스택 감소\n!현황 이름 : 그 사람의 스택 현황\n!스택순위 : 스택이 가장 적은 순으로 순위 보여줌.\n!안녕 : 봇이 인사합니다.
+  await ctx.send('```!push 이름 : 1스택 적립\n!pop 이름 : 1스택 감소\n!현황 이름 : 그 사람의 스택 현황\n!스택순위 : 스택이 가장 적은 순으로 순위 보여줌\n!안녕 : 봇이 인사합니다.')
 
 @bot.command(name='안녕')
 async def 안녕(ctx):
@@ -91,4 +89,4 @@ async def 안녕(ctx):
 access_token = os.environ["BOT_TOKEN"]
 bot.run(access_token)
 """
-bot.run('NzEwNzAwNzgxMzU5MjAyMzg1.Xr-cjA.lP1fSL72fUzYVm_VpOIn0tC4wxY')
+bot.run('NzEwNzAwNzgxMzU5MjAyMzg1.Xr-jHg._sWygd2qhFA43m252SCof1aLz8w')
