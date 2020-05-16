@@ -40,11 +40,11 @@ async def pop(ctx,name):
   n=name
   print(n)
   while i<len(stack):
-    if(n==stack[i]):
-      you = stack[i]
-      if(stack[i]>0):
-        stack[i]=stack[i]-1
-      your=str(stack[i])
+    if(n==stack[i][0]):
+      you = stack[i][0]
+      if(stack[i][1]>0):
+        stack[i][1]=stack[i][1]-1
+      your=str(stack[i][1])
       print(you)
       print(your)
       await ctx.send('```'+you+'님 1스택 삭제. 축하드려요!\n현재 당신의 스택 현황:'+your+'```')
