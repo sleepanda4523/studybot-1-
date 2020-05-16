@@ -42,7 +42,8 @@ async def pop(ctx,name):
   while i<len(stack):
     if(n==stack[i][0]):
       you = stack[i][0]
-      stack[i][1]=stack[i][1]-1
+      if(stack[i][1]>0):
+        stack[i][1]=stack[i][1]-1
       your=str(stack[i][1])
       print(you)
       print(your)
