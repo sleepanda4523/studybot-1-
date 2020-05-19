@@ -29,8 +29,11 @@ async def 벤(ctx,name):
   while i<len(bantime):
     if(name==bantime[i][0]):
       banname=bantime[i][0]
-      bantime[i][1]=bantime[i][1]+10
-      await ctx.send('```현재 '+banname+'님 '+str(bantime[i][1])+'분동안 벤입니다. ```')
+      bantime[i][1]=bantime[i][1]+30
+      if (bantime[i][1]>60) :
+        await ctx.send('```'+banname+'님 영구 벤입니다. ```')
+      else:
+        await ctx.send('```현재 '+banname+'님 '+str(bantime[i][1])+'분동안 벤입니다. ```')
       
       """max_time = time.time()+(60*bantime[i][1])
       print(max_time)
@@ -40,6 +43,11 @@ async def 벤(ctx,name):
           break"""
     i=i+1
 
+@bot.commend()
+async def 추가(ctx,name):
+  stack.append([name,0])
+  bantime.append([name,0])
+ 
 
 @bot.command()
 async def push(ctx,name):
@@ -102,14 +110,13 @@ async def 스택순위(ctx):
 
 @bot.command(name='사용방법')
 async def 사용방법(ctx):
-  await ctx.send('```!push 이름 : 1스택 적립\n!pop 이름 : 1스택 감소\n!현황 이름 : 그 사람의 스택 현황\n!스택순위 : 스택이 가장 적은 순으로 순위 보여줌\n!안녕 : 봇이 인사합니다.')
+  await ctx.send('```!push 이름 : 1스택 적립\n!pop 이름 : 1스택 감소\n!현황 이름 : 그 사람의 스택 현황\n!스택순위 : 스택이 가장 적은 순으로 순위 보여줌\n!추가 이름: 배열에 자기 이름을 추가합니다.\n!안녕 : 봇이 인사합니다.')
 
 @bot.command(name='안녕')
 async def 안녕(ctx):
   await ctx.send('```판다컴퍼니의 오신걸 환영합니다!```')
 
-"""
 access_token = os.environ["BOT_TOKEN"]
 bot.run(access_token)
-"""
-bot.run('NzEwNzAwNzgxMzU5MjAyMzg1.Xr_odg.0gundmEqFRakLYzh-a3HwmF0PGI')
+
+#bot.run('NzEwNzAwNzgxMzU5MjAyMzg1.Xr_odg.0gundmEqFRakLYzh-a3HwmF0PGI')
