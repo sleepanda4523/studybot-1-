@@ -13,12 +13,6 @@ bantime=[['김지민',0],['박승준',0],['유정민',0],['전규현',0],['홍�
 game = discord.Game("!사용방법")
 bot = commands.Bot(command_prefix='!',activity=game,help_command=None)
 
-async def king(ctx,ranking):
-  i=0
-  while i<len(ranking):
-    await ctx.send(str(ranking[i])+'\n')
-    i=i+1
-
 
 n='hi'     
 print(n+stack[0][0])
