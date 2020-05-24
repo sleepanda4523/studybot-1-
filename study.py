@@ -23,11 +23,11 @@ async def 벤(ctx,name):
   while i<len(bantime):
     if(name==bantime[i][0]):
       banname=bantime[i][0]
-      bantime[i][1]=bantime[i][1]+30
-      if (bantime[i][1]>60) :
+      bantime[i][1]=bantime[i][1]+3
+      if (bantime[i][1]>6) :
         await ctx.send('```'+banname+'님 영구 벤입니다. ```')
       else:
-        await ctx.send('```현재 '+banname+'님 '+str(bantime[i][1])+'분동안 벤입니다. ```')
+        await ctx.send('```현재 '+banname+'님 '+str(bantime[i][1])+'일동안 벤입니다. ```')
       
       """max_time = time.time()+(60*bantime[i][1])
       print(max_time)
